@@ -18,8 +18,10 @@ let balance = Number(
   localStorage.getItem("premi_balance") || 0
 );
 
+
 /* নতুন দিন হলে Daily Ads reset */
 if (savedDate !== TODAY) {
+
   completedAds = 0;
 
   localStorage.setItem(
@@ -33,6 +35,8 @@ if (savedDate !== TODAY) {
   );
 }
 
+
+/* Elements */
 const watchButtons =
   document.querySelectorAll(".task-btn");
 
@@ -52,6 +56,7 @@ const rewardAmount =
   document.querySelector(".reward-info strong");
 
 
+/* Update UI */
 function updateUI() {
 
   const percent = Math.min(
@@ -61,22 +66,32 @@ function updateUI() {
     100
   );
 
-  progressTitle.textContent =
-    `${completedAds} / ${DAILY_LIMIT} সম্পন্ন`;
+  if (progressTitle) {
+    progressTitle.textContent =
+      `${completedAds} / ${DAILY_LIMIT} সম্পন্ন`;
+  }
 
-  progressPercent.textContent =
-    `${percent}%`;
+  if (progressPercent) {
+    progressPercent.textContent =
+      `${percent}%`;
+  }
 
-  progressFill.style.width =
-    `${percent}%`;
+  if (progressFill) {
+    progressFill.style.width =
+      `${percent}%`;
+  }
 
-  rewardAmount.textContent =
-    `+${REWARD_PER_AD} Coins`;
+  if (rewardAmount) {
+    rewardAmount.textContent =
+      `+${REWARD_PER_AD} Coins`;
+  }
 
   if (completedAds >= DAILY_LIMIT) {
 
-    progressText.textContent =
-      "আজকের Daily Limit পূর্ণ হয়েছে 🎉";
+    if (progressText) {
+      progressText.textContent =
+        "আজকের Daily Limit পূর্ণ হয়েছে 🎉";
+    }
 
     watchButtons.forEach((button) => {
       button.disabled = true;
@@ -85,8 +100,10 @@ function updateUI() {
 
   } else {
 
-    progressText.textContent =
-      `আরও ${DAILY_LIMIT - completedAds}টি Ads দেখলে আজকের Daily Limit পূর্ণ হবে 🎯`;
+    if (progressText) {
+      progressText.textContent =
+        `আরও ${DAILY_LIMIT - completedAds}টি Ads দেখলে আজকের Daily Limit পূর্ণ হবে 🎯`;
+    }
 
     watchButtons.forEach((button) => {
 
@@ -100,6 +117,7 @@ function updateUI() {
 }
 
 
+/* Save reward */
 function saveData() {
 
   localStorage.setItem(
@@ -109,12 +127,12 @@ function saveData() {
 
   localStorage.setItem(
     "premi_completed_ads",
-    completedAds
+    String(completedAds)
   );
 
   localStorage.setItem(
     "premi_coins",
-    coins
+    String(coins)
   );
 
   localStorage.setItem(
@@ -124,59 +142,85 @@ function saveData() {
 }
 
 
+/* Give reward */
+function giveReward() {
+
+  if (completedAds >= DAILY_LIMIT) {
+    return;
+  }
+
+  completedAds += 1;
+  coins += REWARD_PER_AD;
+  balance += MONEY_PER_AD;
+
+  saveData();
+  updateUI();
+
+  alert(
+    `Ad Complete! 🎉\n\n` +
+    `+${REWARD_PER_AD} Coins\n` +
+    `+৳${MONEY_PER_AD.toFixed(2)}\n\n` +
+    `মোট Coins: ${coins}\n` +
+    `মোট Balance: ৳${balance.toFixed(2)}`
+  );
+}
+
+
+/* Monetag Rewarded Ad */
 watchButtons.forEach((button) => {
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", async () => {
 
     if (
       button.disabled ||
+      button.dataset.running ||
       completedAds >= DAILY_LIMIT
     ) {
       return;
     }
 
-    let seconds = 5;
-
     button.dataset.running = "true";
     button.disabled = true;
-    button.textContent = `${seconds}s`;
+    button.textContent = "Loading...";
 
-    const timer = setInterval(() => {
+    try {
 
-      seconds--;
+      if (typeof window.show_12057878 !== "function") {
 
-      if (seconds > 0) {
-        button.textContent = `${seconds}s`;
-      }
-
-      if (seconds <= 0) {
-
-        clearInterval(timer);
-
-        delete button.dataset.running;
-
-        completedAds += 1;
-        coins += REWARD_PER_AD;
-        balance += MONEY_PER_AD;
-
-        saveData();
-        updateUI();
-
-        if (completedAds < DAILY_LIMIT) {
-          button.disabled = false;
-          button.textContent = "Watch";
-        }
-
-        alert(
-          `Ad Complete! 🎉\n\n` +
-          `+${REWARD_PER_AD} Coins\n` +
-          `+৳${MONEY_PER_AD.toFixed(2)}\n\n` +
-          `মোট Coins: ${coins}\n` +
-          `মোট Balance: ৳${balance.toFixed(2)}`
+        throw new Error(
+          "Monetag SDK not loaded"
         );
       }
 
-    }, 1000);
+      await window.show_12057878();
+
+      /*
+       * Monetag promise সফলভাবে resolve হওয়ার
+       * পরেই reward দেওয়া হবে।
+       */
+      giveReward();
+
+    } catch (error) {
+
+      console.error(
+        "Monetag Ad Error:",
+        error
+      );
+
+      alert(
+        "Ad এখন দেখানো যাচ্ছে না। আবার চেষ্টা করুন।"
+      );
+
+    } finally {
+
+      delete button.dataset.running;
+
+      if (completedAds < DAILY_LIMIT) {
+        button.disabled = false;
+        button.textContent = "Watch";
+      }
+
+    }
 
   });
 
@@ -185,4 +229,6 @@ watchButtons.forEach((button) => {
 
 updateUI();
 
-console.log("Premi Daily Limit System চালু 🚀");
+console.log(
+  "Premi Monetag Reward System চালু 🚀"
+);

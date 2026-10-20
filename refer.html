@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f8ff">
+
+  <title>Premi - Refer & Earn</title>
+
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/refer.css">
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+
+<body>
+
+  <main class="app refer-page">
+
+    <!-- HEADER -->
+    <header class="refer-header">
+      <div>
+        <p>PREMI</p>
+        <h1>Refer & Earn</h1>
+        <span>বন্ধুদের Invite করুন এবং Reward পান</span>
+      </div>
+
+      <div class="refer-header-icon">👥</div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="refer-hero">
+
+      <div class="refer-hero-icon">🎁</div>
+
+      <p>বন্ধুদের সাথে Premi শেয়ার করুন</p>
+
+      <h2>প্রতি সফল রেফারে ৳7 আয় করুন</h2>
+
+      <span>
+        আপনার Referral Link দিয়ে বন্ধুদের Premi-তে
+        Invite করুন এবং Bonus Reward সংগ্রহ করুন।
+      </span>
+
+    </section>
+
+
+    <!-- REFERRAL STATS -->
+    <section class="refer-stats">
+
+      <div class="refer-stat-card">
+        <div class="refer-stat-icon blue">👥</div>
+        <strong id="totalReferrals">0</strong>
+        <span>Total Referrals</span>
+      </div>
+
+      <div class="refer-stat-card">
+        <div class="refer-stat-icon green">💰</div>
+        <strong id="referEarnings">৳0.00</strong>
+        <span>Referral Earnings</span>
+      </div>
+
+    </section>
+
+
+    <!-- REFERRAL LINK -->
+    <section class="refer-link-card">
+
+      <div class="refer-section-title">
+        <div>
+          <h3>আপনার Referral Link</h3>
+          <p>Link Copy করে বন্ধুদের পাঠান</p>
+        </div>
+
+        <span>🔗</span>
+      </div>
+
+
+      <div class="referral-link-box">
+
+        <input
+          type="text"
+          id="referralLink"
+          value="https://t.me/Premi_Monitage_earning_bot"
+          readonly
+        >
+
+        <button id="copyReferralBtn" type="button">
+          📋 Copy
+        </button>
+
+      </div>
+
+
+      <button id="shareReferralBtn" class="share-btn" type="button">
+        📤 Share Referral Link
+      </button>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="how-card">
+
+  <div class="how-title-row">
+    <div>
+      <h3>কিভাবে কাজ করে?</h3>
+      <span>সহজ ৩টি স্টেপে Refer করে আয় করুন</span>
+    </div>
+
+    <div class="how-top-icon">📋</div>
+  </div>
+
+
+  <!-- STEP 1 -->
+  <div class="how-step">
+
+    <div class="step-number">1</div>
+
+    <div class="step-icon link-icon">
+      🔗
+    </div>
+
+    <div class="step-content">
+      <strong>Referral Link Copy করুন</strong>
+
+      <p>
+        উপরের আপনার ব্যক্তিগত Referral Link Copy করুন।
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- STEP 2 -->
+  <div class="how-step">
+
+    <div class="step-number">2</div>
+
+    <div class="step-icon telegram-icon">
+      ➤
+    </div>
+
+    <div class="step-content">
+      <strong>বন্ধুদের Invite করুন</strong>
+
+      <p>
+        Telegram, Messenger বা অন্য জায়গায় Link Share করুন।
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- STEP 3 -->
+  <div class="how-step">
+
+    <div class="step-number">3</div>
+
+    <div class="step-icon gift-icon">
+      🎁
+    </div>
+
+    <div class="step-content">
+      <strong>Reward সংগ্রহ করুন</strong>
+
+      <p>
+        যোগ্য সফল Referral হলে আপনার Account-এ
+        <b>৳7 Reward</b> যোগ হবে।
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- SECURITY -->
+  <div class="refer-security">
+
+    <div class="security-shield">
+      ✓
+    </div>
+
+    <div class="security-text">
+      <strong>নিরাপদ ও নির্ভরযোগ্য</strong>
+
+      <p>
+        আমরা শুধুমাত্র বৈধ ও মানসম্মত Referral গণনা করি।
+        ভুয়া বা অবৈধ Referral গণনা করা হয় না।
+      </p>
+    </div>
+
+    <div class="security-badge">
+      ✓
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item"><span>⌂</span><small>Home</small></a>
+      <a href="tasks.html" class="nav-item"><span>☑</span><small>Tasks</small></a>
+      <a href="refer.html" class="nav-item active"><span>👥</span><small>Refer</small></a>
+      <a href="#" class="nav-item"><span>●</span><small>Profile</small></a>
+    </nav>
+
+  </main>
+
+  <script src="src/refer.js"></script>
+
+</body>
+</html>

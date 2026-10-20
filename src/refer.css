@@ -1,0 +1,1064 @@
+/* ========================================
+   PREMI - REFER & EARN PAGE
+======================================== */
+
+.refer-page {
+  padding-bottom: 120px;
+}
+
+
+/* HEADER */
+
+.refer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 5px 0 18px;
+}
+
+.refer-header p {
+  color: #2672ed;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+
+  margin-bottom: 4px;
+}
+
+.refer-header h1 {
+  color: #172033;
+  font-size: 27px;
+  line-height: 1.2;
+
+  margin-bottom: 5px;
+}
+
+.refer-header > div > span {
+  color: #7c8594;
+  font-size: 10px;
+}
+
+.refer-header-icon {
+  width: 53px;
+  height: 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background: #eaf3ff;
+
+  font-size: 26px;
+
+  box-shadow: 0 5px 16px rgba(31, 88, 180, .10);
+}
+
+
+/* HERO */
+
+.refer-hero {
+  position: relative;
+  overflow: hidden;
+
+  text-align: center;
+
+  padding: 25px 20px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(135deg, #237df5 0%, #315eea 100%);
+
+  color: #fff;
+
+  margin-bottom: 17px;
+
+  box-shadow:
+    0 12px 28px rgba(38, 99, 225, .22);
+}
+
+.refer-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.07);
+
+  right: -55px;
+  top: -70px;
+}
+
+.refer-hero-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 21px;
+
+  background: rgba(255,255,255,.17);
+
+  font-size: 34px;
+}
+
+.refer-hero > p {
+  font-size: 11px;
+  opacity: .85;
+
+  margin-bottom: 5px;
+}
+
+.refer-hero h2 {
+  font-size: 23px;
+
+  margin-bottom: 9px;
+}
+
+.refer-hero > span {
+  display: block;
+
+  max-width: 320px;
+
+  margin: 0 auto;
+
+  font-size: 10px;
+  line-height: 1.65;
+
+  opacity: .88;
+}
+
+
+/* REFERRAL STATS */
+
+.refer-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 11px;
+
+  margin-bottom: 17px;
+}
+
+.refer-stat-card {
+  background: #fff;
+
+  border: 1px solid #edf0f6;
+
+  border-radius: 20px;
+
+  padding: 17px;
+
+  box-shadow:
+    0 6px 18px rgba(31, 57, 105, .065);
+}
+
+.refer-stat-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 21px;
+
+  margin-bottom: 10px;
+}
+
+.refer-stat-icon.blue {
+  background: #eaf3ff;
+}
+
+.refer-stat-icon.green {
+  background: #eafaf2;
+}
+
+.refer-stat-card strong {
+  display: block;
+
+  color: #182033;
+
+  font-size: 20px;
+
+  margin-bottom: 4px;
+}
+
+.refer-stat-card span {
+  color: #7e8796;
+
+  font-size: 10px;
+}
+
+
+/* REFERRAL LINK CARD */
+
+.refer-link-card {
+  background: #fff;
+
+  border-radius: 22px;
+
+  padding: 18px;
+
+  margin-bottom: 17px;
+
+  border: 1px solid #edf0f6;
+
+  box-shadow:
+    0 7px 22px rgba(30, 57, 105, .07);
+}
+
+.refer-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.refer-section-title h3 {
+  color: #172033;
+
+  font-size: 15px;
+
+  margin-bottom: 4px;
+}
+
+.refer-section-title p {
+  color: #858d9b;
+
+  font-size: 9px;
+}
+
+.refer-section-title > span {
+  font-size: 24px;
+}
+
+
+/* LINK BOX */
+
+.referral-link-box {
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 8px;
+
+  padding: 6px;
+
+  background: #f4f7fc;
+
+  border: 1px solid #e5eaf2;
+
+  border-radius: 15px;
+
+  margin-bottom: 11px;
+}
+
+.referral-link-box input {
+  width: 100%;
+  min-width: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #626c7c;
+
+  padding: 8px;
+
+  font-size: 10px;
+}
+
+.referral-link-box button {
+  border: 0;
+
+  padding: 10px 13px;
+
+  border-radius: 11px;
+
+  background: #e4edff;
+
+  color: #2464db;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* SHARE BUTTON */
+
+.share-btn {
+  width: 100%;
+
+  border: 0;
+
+  padding: 13px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(135deg, #287df5, #175be5);
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 16px rgba(29, 96, 225, .20);
+}
+
+.share-btn:active {
+  transform: scale(.985);
+}
+
+
+/* HOW IT WORKS */
+
+.
+/* =========================================
+   PREMIUM HOW IT WORKS - REFER PAGE
+========================================= */
+
+.how-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #f7faff);
+  border: 1px solid #dce9ff;
+  border-radius: 26px;
+  padding: 22px 16px;
+  box-shadow: 0 12px 35px rgba(30, 91, 190, 0.10);
+}
+
+.how-card::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(38, 117, 245, 0.06);
+  top: -65px;
+  right: -45px;
+}
+
+.how-card > h3 {
+  position: relative;
+  color: #101d3b;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 24px;
+  padding-bottom: 13px;
+}
+
+.how-card > h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 55px;
+  height: 4px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #1769ef, #55a2ff);
+}
+
+
+/* EACH STEP */
+
+.how-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 14px;
+  align-items: center;
+
+  min-height: 92px;
+  padding: 15px;
+
+  margin-bottom: 14px;
+
+  background: linear-gradient(135deg, #ffffff, #f5f9ff);
+  border: 1px solid #d7e6ff;
+  border-radius: 20px;
+
+  box-shadow:
+    0 6px 18px rgba(39, 91, 170, 0.07);
+}
+
+.how-item:last-child {
+  margin-bottom: 0;
+}
+
+
+/* BLUE NUMBER */
+
+.how-number {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #348cff, #1257df);
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  border: 4px solid #eaf3ff;
+
+  box-shadow:
+    0 6px 14px rgba(25, 99, 226, 0.25);
+}
+
+
+/* TEXT */
+
+.how-item strong {
+  display: block;
+
+  color: #101c39;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  margin-bottom: 7px;
+}
+
+.how-item p {
+  color: #69758b;
+
+  font-size: 10px;
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* CONNECTING LINE */
+
+.how-item:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 38px;
+  bottom: -15px;
+
+  width: 2px;
+  height: 15px;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #438bf3 0,
+      #438bf3 4px,
+      transparent 4px,
+      transparent 7px
+    );
+}
+
+
+/* SPECIAL REWARD CARD */
+
+.how-item:nth-of-type(3) {
+  background:
+    linear-gradient(135deg, #f7fbff, #edf5ff);
+
+  border-color: #bfd8ff;
+}
+
+.how-item:nth-of-type(3) strong {
+  color: #1256d9;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 420px) {
+
+  .how-card {
+    padding: 19px 13px;
+    border-radius: 23px;
+  }
+
+  .how-card > h3 {
+    font-size: 18px;
+  }
+
+  .how-item {
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .how-number {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .how-item strong {
+    font-size: 12px;
+  }
+
+  .how-item p {
+    font-size: 9.5px;
+  }
+
+  .how-item:not(:last-child)::after {
+    left: 34px;
+  }
+}
+/* ==================================================
+   PREMI - PREMIUM HOW IT WORKS
+================================================== */
+
+.how-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #dce9ff;
+  border-radius: 28px;
+
+  padding: 22px 16px;
+
+  box-shadow:
+    0 12px 35px rgba(35, 91, 180, 0.10);
+
+  margin-bottom: 20px;
+}
+
+
+/* ===== TITLE ===== */
+
+.how-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+  padding: 3px 4px;
+}
+
+.how-title-row h3 {
+  position: relative;
+
+  margin: 0 0 15px;
+
+  color: #0b1939;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.how-title-row h3::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -9px;
+
+  width: 58px;
+  height: 4px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(90deg, #1469f3, #55a4ff);
+}
+
+.how-title-row span {
+  color: #71809a;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.how-top-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(145deg, #edf5ff, #dbeaff);
+
+  font-size: 25px;
+
+  box-shadow:
+    0 7px 18px rgba(29, 100, 225, 0.13);
+}
+
+
+/* ==================================================
+   STEP CARDS
+================================================== */
+
+.how-step {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 45px 68px 1fr;
+
+  gap: 11px;
+
+  align-items: center;
+
+  min-height: 112px;
+
+  padding: 15px 13px;
+
+  margin-bottom: 15px;
+
+  background:
+    linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+
+  border: 1px solid #d4e4ff;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 7px 20px rgba(37, 91, 175, 0.07);
+}
+
+
+/* ===== NUMBER ===== */
+
+.step-number {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(145deg, #348cff, #0756e6);
+
+  color: #ffffff;
+
+  font-size: 19px;
+  font-weight: 800;
+
+  border: 4px solid #eaf3ff;
+
+  box-shadow:
+    0 6px 15px rgba(19, 91, 225, 0.27);
+
+  z-index: 2;
+}
+
+
+/* DOTTED CONNECTOR */
+
+.how-step:not(:nth-last-child(2)) .step-number::after {
+  content: "";
+
+  position: absolute;
+
+  left: 33px;
+  bottom: -16px;
+
+  height: 16px;
+
+  border-left: 2px dashed #448cf2;
+}
+
+
+/* ==================================================
+   STEP ICON
+================================================== */
+
+.step-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(145deg, #ffffff, #eaf3ff);
+
+  border: 6px solid #ffffff;
+
+  color: #2477ef;
+
+  font-size: 29px;
+
+  box-shadow:
+    0 6px 20px rgba(31, 103, 221, 0.13);
+}
+
+
+/* LINK */
+
+.link-icon {
+  font-size: 30px;
+}
+
+
+/* TELEGRAM */
+
+.telegram-icon {
+  color: #ffffff;
+
+  font-size: 31px;
+  font-weight: 900;
+
+  transform: rotate(-18deg);
+
+  background:
+    linear-gradient(145deg, #42b8f5, #168bd7);
+
+  box-shadow:
+    0 7px 19px rgba(22, 145, 218, 0.24);
+}
+
+
+/* GIFT */
+
+.gift-icon {
+  font-size: 31px;
+}
+
+
+/* ==================================================
+   STEP TEXT
+================================================== */
+
+.step-content {
+  min-width: 0;
+}
+
+.step-content strong {
+  display: block;
+
+  color: #101b38;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  margin-bottom: 8px;
+}
+
+.step-content p {
+  margin: 0;
+
+  color: #66738b;
+
+  font-size: 10px;
+
+  line-height: 1.65;
+}
+
+.step-content p b {
+  color: #0868f2;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* STEP 3 SPECIAL */
+
+.how-step:nth-of-type(4) {
+  background:
+    linear-gradient(135deg, #ffffff, #f0f6ff);
+
+  border-color: #bdd7ff;
+}
+
+
+/* ==================================================
+   SAFE & TRUSTED BOX
+================================================== */
+
+.refer-security {
+  display: grid;
+
+  grid-template-columns: 52px 1fr 37px;
+
+  gap: 12px;
+
+  align-items: center;
+
+  margin-top: 18px;
+
+  padding: 15px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(135deg, #f8fbff, #edf5ff);
+
+  border: 1px solid #cfe1ff;
+
+  box-shadow:
+    0 6px 18px rgba(31, 92, 185, 0.07);
+}
+
+
+/* SHIELD */
+
+.security-shield {
+  width: 48px;
+  height: 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 22px;
+  font-weight: 900;
+
+  background:
+    linear-gradient(145deg, #3e98ff, #0960ec);
+
+  clip-path:
+    polygon(
+      50% 0%,
+      90% 15%,
+      90% 55%,
+      78% 78%,
+      50% 100%,
+      22% 78%,
+      10% 55%,
+      10% 15%
+    );
+
+  filter:
+    drop-shadow(0 5px 7px rgba(19, 92, 224, 0.22));
+}
+
+
+/* SECURITY TEXT */
+
+.security-text strong {
+  display: block;
+
+  color: #101c38;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  margin-bottom: 5px;
+}
+
+.security-text p {
+  margin: 0;
+
+  color: #6b7890;
+
+  font-size: 9px;
+
+  line-height: 1.6;
+}
+
+
+/* VERIFIED BADGE */
+
+.security-badge {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e2efff;
+
+  border: 3px solid #ffffff;
+
+  color: #2174ec;
+
+  font-size: 16px;
+  font-weight: 900;
+
+  box-shadow:
+    0 4px 12px rgba(31, 100, 220, 0.14);
+}
+
+
+/* ==================================================
+   SMALL PHONE
+================================================== */
+
+@media (max-width: 390px) {
+
+  .how-card {
+    padding: 18px 11px;
+  }
+
+  .how-step {
+    grid-template-columns: 39px 55px 1fr;
+
+    gap: 8px;
+
+    padding: 13px 9px;
+  }
+
+  .step-number {
+    width: 38px;
+    height: 38px;
+
+    font-size: 17px;
+  }
+
+  .step-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 25px;
+  }
+
+  .step-content strong {
+    font-size: 11px;
+  }
+
+  .step-content p {
+    font-size: 9px;
+  }
+
+  .refer-security {
+    grid-template-columns: 45px 1fr;
+
+    padding: 13px 10px;
+  }
+
+  .security-shield {
+    width: 43px;
+    height: 48px;
+  }
+
+  .security-badge {
+    display: none;
+  }
+}
+
+/* ================================
+   PREMI - BOTTOM NAVIGATION
+================================ */
+
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 480px;
+
+  height: 68px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-top: 1px solid #dce8f8;
+
+  box-shadow:
+    0 -8px 25px rgba(30, 80, 160, 0.10);
+
+  z-index: 9999;
+}
+
+.bottom-nav .nav-item {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3px;
+
+  text-decoration: none;
+
+  color: #7b879b;
+
+  font-size: 21px;
+
+  transition: 0.2s ease;
+}
+
+.bottom-nav .nav-item small {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.bottom-nav .nav-item.active {
+  color: #1769e8;
+}
+
+.bottom-nav .nav-item.active span {
+  transform: scale(1.08);
+}
+
+.bottom-nav .nav-item:hover {
+  color: #1769e8;
+}
+
+/* Prevent content from hiding behind navigation */
+
+.refer-page {
+  padding-bottom: 90px;
+}
+
+@media (max-width: 390px) {
+
+  .bottom-nav {
+    height: 64px;
+  }
+
+  .bottom-nav .nav-item {
+    font-size: 19px;
+  }
+
+  .bottom-nav .nav-item small {
+    font-size: 9px;
+  }
+
+}
+

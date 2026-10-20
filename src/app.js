@@ -1,66 +1,286 @@
-const DAILY_LIMIT = 15;
+// ========================================
+// PREMI - Home JavaScript
+// ========================================
 
-const coins = Number(
-  localStorage.getItem("premi_coins") || 40
-);
+document.addEventListener("DOMContentLoaded", () => {
 
-const balance = Number(
-  localStorage.getItem("premi_balance") || 36.80
-);
+  // ========================================
+  // Telegram Mini App
+  // ========================================
 
-const completedAds = Number(
-  localStorage.getItem("premi_completed_ads") || 8
-);
+  const tg = window.Telegram?.WebApp;
 
-/* Home Balance */
-const balanceAmount = document.querySelector(".balance-top h1");
-const coinAmount = document.querySelector(".balance-top p");
+  if (tg) {
+    tg.ready();
+    tg.expand();
+  }
 
-if (balanceAmount) {
-  balanceAmount.textContent =
-    `৳ ${balance.toFixed(2)}`;
-}
 
-if (coinAmount) {
-  coinAmount.textContent =
-    `${coins} Coins`;
-}
+  // ========================================
+  // Settings
+  // ========================================
 
-/* Daily Progress */
-const progressTitle =
-  document.querySelector(".progress-card .progress-header h3");
+  const DAILY_LIMIT = 15;
 
-const progressPercent =
-  document.querySelector(".progress-card .progress-header > strong");
 
-const progressFill =
-  document.querySelector(".progress-fill");
+  // ========================================
+  // Get Saved Data
+  // ========================================
 
-const progressText =
-  document.querySelector(".progress-card p");
-
-if (progressTitle) {
-  progressTitle.textContent =
-    `${completedAds} / ${DAILY_LIMIT} Ads সম্পন্ন`;
-}
-
-if (progressPercent) {
-  const percent = Math.round(
-    (completedAds / DAILY_LIMIT) * 100
+  let coins = Number(
+    localStorage.getItem("premi_coins") || 40
   );
 
-  progressPercent.textContent =
-    `${percent}%`;
+  let balance = Number(
+    localStorage.getItem("premi_balance") || 36.80
+  );
 
-  progressFill.style.width =
-    `${Math.min(percent, 100)}%`;
-}
+  let completedAds = Number(
+    localStorage.getItem("premi_completed_ads") || 8
+  );
 
-if (progressText) {
-  progressText.textContent =
-    completedAds >= DAILY_LIMIT
-      ? "আজকের Daily Limit পূর্ণ হয়েছে 🎉"
-      : `আরও ${DAILY_LIMIT - completedAds}টি Ads দেখলে আজকের Daily Limit পূর্ণ হবে 🎯`;
-}
 
-console.log("Premi Home synced 🚀");
+  // ========================================
+  // Home Elements
+  // ========================================
+
+  const balanceElement =
+    document.getElementById("balance");
+
+  const coinsElement =
+    document.getElementById("coins");
+
+  const completedElement =
+    document.getElementById("completedAds");
+
+  const progressPercentElement =
+    document.getElementById("progressPercent");
+
+  const progressFillElement =
+    document.getElementById("progressFill");
+
+  const progressTextElement =
+    document.getElementById("progressText");
+
+  const progressTitleElement =
+    document.querySelector(
+      ".progress-card .progress-header h3"
+    );
+
+
+  // ========================================
+  // Update Home
+  // ========================================
+
+  function updateHome() {
+
+    // Balance
+    if (balanceElement) {
+      balanceElement.textContent =
+        balance.toFixed(2);
+    }
+
+
+    // Coins
+    if (coinsElement) {
+      coinsElement.textContent =
+        coins;
+    }
+
+
+    // Completed Ads
+    if (completedElement) {
+      completedElement.textContent =
+        completedAds;
+    }
+
+
+    // Progress
+    const percent = Math.min(
+      Math.round(
+        (completedAds / DAILY_LIMIT) * 100
+      ),
+      100
+    );
+
+
+    if (progressTitleElement) {
+      progressTitleElement.textContent =
+        `${completedAds} / ${DAILY_LIMIT} সম্পন্ন`;
+    }
+
+
+    if (progressPercentElement) {
+      progressPercentElement.textContent =
+        `${percent}%`;
+    }
+
+
+    if (progressFillElement) {
+      progressFillElement.style.width =
+        `${percent}%`;
+    }
+
+
+    if (progressTextElement) {
+
+      if (completedAds >= DAILY_LIMIT) {
+
+        progressTextElement.textContent =
+          "আজকের Daily Limit পূর্ণ হয়েছে 🎉";
+
+      } else {
+
+        progressTextElement.textContent =
+          `আরও ${DAILY_LIMIT - completedAds}টি Ads দেখলে আজকের Daily Limit পূর্ণ হবে 🎯`;
+
+      }
+    }
+  }
+
+
+  // ========================================
+  // Tasks Button
+  // ========================================
+
+  const tasksButton =
+    document.querySelector(
+      '.quick-actions a[href="tasks.html"]'
+    );
+
+  if (tasksButton) {
+
+    tasksButton.addEventListener(
+      "click",
+      () => {
+        window.location.href =
+          "tasks.html";
+      }
+    );
+
+  }
+
+
+  // ========================================
+  // Quick Actions
+  // ========================================
+
+  const quickActions =
+    document.querySelectorAll(
+      ".quick-actions .action-card"
+    );
+
+
+  quickActions.forEach((card) => {
+
+    const title =
+      card.querySelector("strong")?.textContent
+        ?.trim();
+
+
+    if (title === "Withdraw") {
+
+      card.addEventListener(
+        "click",
+        () => {
+          alert(
+            "Withdraw System শীঘ্রই চালু হবে 💳"
+          );
+        }
+      );
+
+    }
+
+
+    if (title === "Refer") {
+
+      card.addEventListener(
+        "click",
+        () => {
+          alert(
+            "Refer System শীঘ্রই চালু হবে 👥"
+          );
+        }
+      );
+
+    }
+
+  });
+
+
+  // ========================================
+  // Bottom Navigation
+  // ========================================
+
+  const bottomLinks =
+    document.querySelectorAll(
+      ".bottom-nav a"
+    );
+
+
+  bottomLinks.forEach((link) => {
+
+    link.addEventListener(
+      "click",
+      (event) => {
+
+        const text =
+          link.querySelector("span")
+            ?.textContent
+            ?.trim();
+
+
+        // Home
+        if (text === "Home") {
+          return;
+        }
+
+
+        // Tasks
+        if (text === "Tasks") {
+          return;
+        }
+
+
+        // Wallet
+        if (text === "Wallet") {
+
+          event.preventDefault();
+
+          alert(
+            "Wallet System শীঘ্রই চালু হবে 💰"
+          );
+
+          return;
+        }
+
+
+        // Profile
+        if (text === "Profile") {
+
+          event.preventDefault();
+
+          alert(
+            "Profile System শীঘ্রই চালু হবে 👤"
+          );
+
+        }
+
+      }
+    );
+
+  });
+
+
+  // ========================================
+  // First Load
+  // ========================================
+
+  updateHome();
+
+
+  console.log(
+    "Premi Home synced successfully 🚀"
+  );
+
+});

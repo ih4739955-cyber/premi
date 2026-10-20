@@ -1,60 +1,182 @@
-/* =========================
-   TASKS PAGE
-========================= */
+/* ========================================
+   PREMI - MODERN TASKS PAGE
+======================================== */
 
-.reward-info {
+.page-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  margin: 4px 0 18px;
+}
 
-  padding: 15px;
+.page-header .eyebrow {
+  color: #2775ee;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
 
-  margin-bottom: 22px;
+.page-header h1 {
+  color: #172033;
+  font-size: 28px;
+  line-height: 1.1;
+}
 
-  border-radius: 18px;
+.home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 13px;
+  background: #fff;
+  color: #2870e7;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 5px 18px rgba(28, 61, 120, 0.08);
+}
 
-  background: linear-gradient(
-    135deg,
-    #fff8df,
-    #ffffff
-  );
 
-  border: 1px solid #f5e8b8;
+/* REWARD CARD */
 
-  box-shadow:
-    0 6px 20px rgba(70, 60, 20, .05);
+.reward-info {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px;
+
+  margin-bottom: 18px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(135deg, #fff9df 0%, #fffdf4 100%);
+
+  border: 1px solid #f6e6a8;
+
+  box-shadow: 0 8px 22px rgba(115, 92, 24, 0.07);
+}
+
+.reward-info::after {
+  content: "";
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  right: -45px;
+  top: -50px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 211, 62, 0.12);
 }
 
 .reward-icon {
-  width: 45px;
-  height: 45px;
+  width: 58px;
+  height: 58px;
 
-  display: grid;
-  place-items: center;
+  flex: 0 0 58px;
 
-  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  background: #fff0b8;
+  border-radius: 18px;
 
-  font-size: 21px;
+  background: linear-gradient(135deg, #fff1a7, #ffdf59);
+
+  font-size: 30px;
+
+  box-shadow: 0 5px 14px rgba(220, 172, 24, 0.16);
 }
 
 .reward-info span {
   display: block;
 
-  color: var(--muted);
+  color: #747b87;
 
-  font-size: 9px;
+  font-size: 11px;
 
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .reward-info strong {
-  display: block;
+  color: #d79b00;
 
-  color: #d99b00;
+  font-size: 20px;
+}
+
+
+/* PROGRESS */
+
+.progress-card {
+  background: #fff;
+
+  padding: 18px;
+
+  border-radius: 22px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 7px 23px rgba(35, 62, 112, 0.07);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 13px;
+}
+
+.progress-header h3 {
+  color: #172033;
 
   font-size: 15px;
+}
+
+.progress-header strong {
+  color: #2471ef;
+
+  font-size: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 9px;
+
+  background: #edf1f7;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+
+  width: 0;
+
+  border-radius: inherit;
+
+  background: linear-gradient(90deg, #3c87fa, #2465e8);
+
+  transition: width .35s ease;
+}
+
+.progress-card p {
+  color: #8b93a1;
+
+  font-size: 10px;
+
+  line-height: 1.5;
 }
 
 
@@ -64,118 +186,284 @@
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
+  gap: 12px;
+
+  padding-bottom: 95px;
 }
+
+
+/* TASK CARD */
 
 .task-card {
-  display: flex;
-  align-items: center;
-
-  gap: 11px;
-
-  padding: 13px;
-
-  border-radius: 18px;
-
-  background: white;
-
-  box-shadow:
-    0 6px 20px rgba(30,50,90,.055);
-}
-
-.task-number {
-  min-width: 38px;
-  height: 38px;
+  position: relative;
 
   display: grid;
-  place-items: center;
 
-  border-radius: 12px;
+  grid-template-columns: 52px 1fr 78px;
 
-  background: #edf2ff;
+  align-items: center;
 
-  color: var(--primary);
+  gap: 12px;
 
-  font-size: 10px;
+  width: 100%;
+
+  min-height: 105px;
+
+  padding: 14px;
+
+  background: #fff;
+
+  border: 1px solid #edf1f7;
+
+  border-radius: 21px;
+
+  box-shadow: 0 6px 20px rgba(31, 57, 105, 0.065);
+}
+
+
+/* TASK NUMBER */
+
+.task-number {
+  width: 48px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  color: #2769dc;
+
+  background: linear-gradient(145deg, #e9f2ff, #f4f8ff);
+
+  font-size: 14px;
+
   font-weight: 800;
 }
 
-.task-details {
-  flex: 1;
 
+/* TASK DETAILS */
+
+.task-details {
   min-width: 0;
 }
 
 .task-details h3 {
-  font-size: 12px;
+  color: #172033;
 
-  margin-bottom: 4px;
+  font-size: 14px;
+
+  margin-bottom: 5px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .task-details p {
-  color: var(--muted);
+  color: #737c8c;
 
-  font-size: 8px;
+  font-size: 9px;
 
-  line-height: 1.4;
+  line-height: 1.45;
 
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 
 .task-reward {
-  display: inline-block;
+  display: inline-flex;
 
-  color: #d99b00;
+  align-items: center;
 
-  font-size: 9px;
-  font-weight: 700;
+  padding: 5px 8px;
 
-  background: #fff8df;
+  border-radius: 20px;
 
-  padding: 4px 7px;
+  background: #fff7d9;
 
-  border-radius: 7px;
-}
-
-.task-btn {
-  flex-shrink: 0;
-
-  padding: 9px 12px;
-
-  border-radius: 11px;
-
-  background: var(--primary);
-
-  color: white;
+  color: #d69c00;
 
   font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* WATCH BUTTON */
+
+.task-btn {
+  width: 78px;
+  min-height: 42px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 13px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(135deg, #2d82f7, #155be5);
+
+  font-size: 12px;
+
   font-weight: 700;
 
+  cursor: pointer;
+
   box-shadow:
-    0 6px 13px rgba(56,103,240,.18);
+    0 6px 15px rgba(29, 101, 230, 0.24);
+
+  transition:
+    transform .15s ease,
+    opacity .15s ease;
 }
 
 .task-btn:active {
-  transform: scale(.95);
+  transform: scale(.96);
+}
+
+.task-btn:disabled {
+  cursor: not-allowed;
+
+  color: #7b8493;
+
+  background: #e9edf3;
+
+  box-shadow: none;
+
+  opacity: .85;
+}
+
+
+/* ========================================
+   TASKS BOTTOM NAV
+======================================== */
+
+body:has(.task-list) .bottom-nav {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+body:has(.task-list) .bottom-nav a {
+  margin-top: 0;
+}
+
+body:has(.task-list) .bottom-nav a.active {
+  color: #1768ee;
+}
+
+body:has(.task-list) .bottom-nav .nav-icon {
+  font-size: 23px;
 }
 
 
 /* MOBILE */
 
-@media (max-width: 360px) {
+@media (max-width: 420px) {
+
+  .page-header h1 {
+    font-size: 25px;
+  }
 
   .task-card {
-    padding: 11px;
-    gap: 8px;
+    grid-template-columns: 46px 1fr 70px;
+
+    gap: 9px;
+
+    min-height: 100px;
+
+    padding: 12px;
   }
 
   .task-number {
-    min-width: 34px;
-    height: 34px;
+    width: 43px;
+    height: 53px;
+
+    font-size: 12px;
+  }
+
+  .task-details h3 {
+    font-size: 12px;
+  }
+
+  .task-details p {
+    font-size: 8px;
+  }
+
+  .task-reward {
+    font-size: 9px;
+
+    padding: 4px 7px;
   }
 
   .task-btn {
-    padding: 8px 9px;
+    width: 70px;
+
+    min-height: 40px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* VERY SMALL PHONE */
+
+@media (max-width: 340px) {
+
+  .task-card {
+    grid-template-columns: 40px 1fr 62px;
+
+    gap: 7px;
+
+    padding: 10px;
   }
 
+  .task-number {
+    width: 38px;
+    height: 48px;
+  }
+
+  .task-details p {
+    display: none;
+  }
+
+  .task-btn {
+    width: 62px;
+
+    font-size: 10px;
+  }
+}
+
+/* ===== PREMI TASKS 5 ITEM BOTTOM NAV ===== */
+
+.tasks-bottom-nav {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+
+.tasks-bottom-nav .center-watch {
+  margin-top: -29px !important;
+}
+
+.tasks-bottom-nav .play-circle {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #247df8, #154eea);
+  color: #fff;
+  font-size: 20px;
+  border: 5px solid #f5f8ff;
+  box-shadow: 0 6px 18px rgba(28,94,230,.30);
+}
+
+.tasks-bottom-nav .center-watch small {
+  color: #185ce6;
+  font-weight: 600;
+}
+
+.task-list {
+  padding-bottom: 120px;
 }

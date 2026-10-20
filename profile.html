@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f8ff">
+
+  <title>Premi - Profile</title>
+
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/profile.css">
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+
+<body>
+
+  <main class="app profile-page">
+
+    <!-- HEADER -->
+    <header class="profile-header">
+      <div>
+        <p>PREMI</p>
+        <h1>My Profile</h1>
+        <span>আপনার Account ও Earnings পরিচালনা করুন</span>
+      </div>
+
+      <div class="header-profile-icon">👤</div>
+    </header>
+
+
+    <!-- PROFILE CARD -->
+    <section class="profile-card">
+
+      <div class="profile-avatar-wrap">
+        <div class="profile-avatar" id="profileAvatar">👤</div>
+        <span class="online-dot"></span>
+      </div>
+
+      <div class="profile-info">
+        <h2 id="profileName">Premi User</h2>
+        <p id="profileUsername">@premi_user</p>
+
+        <div class="verified-badge">
+          ✓ Active Member
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- BALANCE -->
+    <section class="profile-balance-card">
+
+      <div class="balance-info">
+        <span>Available Balance</span>
+        <strong id="profileBalance">৳0.00</strong>
+        <p id="profileCoins">🪙 0 Coins</p>
+      </div>
+
+      <div class="balance-icon">💰</div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="profile-stats">
+
+      <div class="profile-stat">
+        <div class="stat-icon">📺</div>
+        <strong id="profileAds">0</strong>
+        <span>Ads Watched</span>
+      </div>
+
+      <div class="profile-stat">
+        <div class="stat-icon">👥</div>
+        <strong id="profileReferrals">0</strong>
+        <span>Referrals</span>
+      </div>
+
+      <div class="profile-stat">
+        <div class="stat-icon">🏆</div>
+        <strong id="profileEarnings">৳0</strong>
+        <span>Total Earned</span>
+      </div>
+
+    </section>
+
+
+    <!-- ACCOUNT -->
+    <section class="profile-menu-card">
+
+      <div class="profile-section-title">
+        <div>
+          <h3>Account</h3>
+          <p>আপনার Premi Account পরিচালনা করুন</p>
+        </div>
+
+        <span>⚙️</span>
+      </div>
+
+
+      <a href="#" class="profile-menu-item" id="withdrawProfileBtn">
+        <div class="menu-icon blue">💳</div>
+
+        <div class="menu-text">
+          <strong>Withdraw</strong>
+          <span>আপনার Earnings Withdraw করুন</span>
+        </div>
+
+        <div class="menu-arrow">›</div>
+      </a>
+
+
+      <a href="refer.html" class="profile-menu-item">
+        <div class="menu-icon purple">👥</div>
+
+        <div class="menu-text">
+          <strong>Refer & Earn</strong>
+          <span>বন্ধুদের Invite করে Reward পান</span>
+        </div>
+
+        <div class="menu-arrow">›</div>
+      </a>
+
+
+      <a href="#" class="profile-menu-item">
+        <div class="menu-icon green">🔒</div>
+
+        <div class="menu-text">
+          <strong>Security</strong>
+          <span>Account নিরাপত্তা ও তথ্য</span>
+        </div>
+
+        <div class="menu-arrow">›</div>
+      </a>
+
+    </section>
+
+
+    <!-- SUPPORT -->
+    <section class="profile-menu-card">
+
+      <div class="profile-section-title">
+        <div>
+          <h3>Support</h3>
+          <p>সাহায্য ও Premi সম্পর্কে তথ্য</p>
+        </div>
+
+        <span>💬</span>
+      </div>
+
+
+      <a href="#" class="profile-menu-item">
+        <div class="menu-icon orange">❓</div>
+
+        <div class="menu-text">
+          <strong>Help & Support</strong>
+          <span>সমস্যা হলে আমাদের সাথে যোগাযোগ করুন</span>
+        </div>
+
+        <div class="menu-arrow">›</div>
+      </a>
+
+
+      <a href="#" class="profile-menu-item">
+        <div class="menu-icon gray">ℹ️</div>
+
+        <div class="menu-text">
+          <strong>About Premi</strong>
+          <span>Version 1.0</span>
+        </div>
+
+        <div class="menu-arrow">›</div>
+      </a>
+
+    </section>
+
+
+    <!-- LOGOUT -->
+    <button class="logout-btn" type="button">
+      <span>↪</span>
+      Logout
+    </button>
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+
+      <a href="index.html" class="nav-item">
+        <span>⌂</span>
+        <small>Home</small>
+      </a>
+
+      <a href="tasks.html" class="nav-item">
+        <span>☑</span>
+        <small>Tasks</small>
+      </a>
+
+      <a href="refer.html" class="nav-item">
+        <span>👥</span>
+        <small>Refer</small>
+      </a>
+
+      <a href="profile.html" class="nav-item active">
+        <span>●</span>
+        <small>Profile</small>
+      </a>
+
+    </nav>
+
+  </main>
+
+
+  <script src="src/profile.js"></script>
+
+</body>
+</html>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f8ff">
 
   <title>Premi</title>
 
@@ -10,104 +11,226 @@
 
   <!-- Telegram Mini App -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- Monetag Rewarded Interstitial -->
+  <script
+    src="//libtl.com/sdk.js"
+    data-zone="12057878"
+    data-sdk="show_12057878">
+  </script>
 </head>
 
 <body>
 
-  <header class="topbar">
-    <div>
-      <h1>Premi</h1>
-      <p>Earn • Complete • Reward</p>
-    </div>
-  </header>
+  <div class="app">
 
-  <main>
+    <!-- USER HEADER -->
+    <header class="user-header">
 
-    <section class="balance-card">
-      <p>Current Balance</p>
-      <h2>৳<span id="balance">36.80</span></h2>
-      <p><span id="coins">40</span> Coins</p>
+      <div class="user-left">
+        <div class="avatar">P</div>
+
+        <div class="user-info">
+          <small>স্বাগতম 👋</small>
+          <h2>Premi User</h2>
+          <span>🟢 Active User</span>
+        </div>
+      </div>
+
+      <button class="notification-btn" type="button">
+        🔔
+        <b></b>
+      </button>
+
+    </header>
+
+
+    <!-- BALANCE CARD -->
+    <section class="hero-card">
+
+      <div class="hero-main">
+
+        <div class="hero-balance">
+          <p>বর্তমান ব্যালেন্স</p>
+
+          <h1>
+            ৳ <span id="balance">36.80</span>
+          </h1>
+
+          <span class="coin-count">
+            🪙 <span id="coins">40</span> Coins
+          </span>
+
+          <button class="withdraw-btn" type="button">
+            💳 Withdraw
+          </button>
+        </div>
+
+
+        <div class="hero-stats">
+
+          <div>
+            <span>আজকের আয়</span>
+            <strong id="todayIncome">৳ 0.00</strong>
+          </div>
+
+          <div>
+            <span>আজ Ads দেখা হয়েছে</span>
+            <strong>
+              <span id="completedAds">0</span> / 15
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="money-art">
+        <div class="wallet">👛</div>
+        <div class="money">💵</div>
+        <div class="coins-art">🪙</div>
+      </div>
+
     </section>
 
-    <section class="quick-actions">
-      <a href="tasks.html" class="action-card">
-        <span>🎯</span>
-        <strong>Tasks</strong>
-        <small>Watch Ads</small>
+
+    <!-- WATCH AD BANNER -->
+    <section class="watch-banner">
+
+      <div class="watch-icon">
+        🎬
+      </div>
+
+      <div class="watch-copy">
+        <h3>বিজ্ঞাপন দেখুন আর আয় করুন</h3>
+        <p>প্রতি বিজ্ঞাপন সম্পূর্ণ দেখলে পাবেন পুরস্কার।</p>
+      </div>
+
+      <a href="tasks.html" class="watch-ad-btn">
+        ▶ Watch Ad
+        <small>এখনই দেখুন</small>
       </a>
 
-      <div class="action-card">
-        <span>💰</span>
-        <strong>Withdraw</strong>
-        <small>Coming Soon</small>
-      </div>
-
-      <div class="action-card">
-        <span>👤</span>
-        <strong>Profile</strong>
-        <small>Account</small>
-      </div>
     </section>
 
+
+    <!-- QUICK ACTIONS -->
+    <section class="quick-actions">
+
+      <a href="refer.html" class="action-card refer-action">
+        <div class="action-icon blue">👥</div>
+        <strong>Refer & Earn</strong>
+        <small>রেফার করে আয় করুন</small>
+      </a>
+
+      <a href="#" class="action-card withdraw-action">
+        <div class="action-icon purple">👛</div>
+        <strong>Withdraw</strong>
+        <small>টাকা উত্তোলন করুন</small>
+      </a>
+
+      <a href="tasks.html" class="action-card">
+        <div class="action-icon orange">📋</div>
+        <strong>Tasks</strong>
+        <small>Ads দেখে আয় করুন</small>
+      </a>
+
+      <a href="#" class="action-card profile-action">
+        <div class="action-icon pink">👤</div>
+        <strong>Profile</strong>
+        <small>আপনার প্রোফাইল</small>
+      </a>
+
+    </section>
+
+
+    <!-- DAILY PROGRESS -->
     <section class="progress-card">
+
       <div class="progress-header">
-        <h3>Daily Progress</h3>
-        <strong id="progressPercent">53%</strong>
+        <h3>আজকের অগ্রগতি</h3>
+        <strong id="progressPercent">0%</strong>
       </div>
 
       <div class="progress-bar">
         <div
           class="progress-fill"
           id="progressFill"
-          style="width: 53%;">
+          style="width:0%">
         </div>
       </div>
 
       <p id="progressText">
         আজকের Daily Tasks সম্পন্ন করুন 🎯
       </p>
+
     </section>
 
+
+    <!-- QUICK STATS TITLE -->
+    <div class="section-title">
+      <h3>দ্রুত পরিসংখ্যান</h3>
+      <a href="tasks.html">সব দেখুন →</a>
+    </div>
+
+
+    <!-- STATS -->
     <section class="stats">
-      <div>
-        <strong id="completedAds">8</strong>
-        <span>Ads Completed</span>
+
+      <div class="stat-card green-stat">
+        <span class="stat-icon">👁</span>
+        <strong id="totalAds">0</strong>
+        <small>আজকের Ads</small>
       </div>
 
-      <div>
+      <div class="stat-card blue-stat">
+        <span class="stat-icon">🎁</span>
+        <strong id="statBalance">৳0.00</strong>
+        <small>বর্তমান ব্যালেন্স</small>
+      </div>
+
+      <div class="stat-card orange-stat">
+        <span class="stat-icon">🪙</span>
+        <strong id="statCoins">0</strong>
+        <small>মোট Coins</small>
+      </div>
+
+      <div class="stat-card purple-stat">
+        <span class="stat-icon">📺</span>
         <strong>15</strong>
-        <span>Daily Limit</span>
+        <small>Daily Limit</small>
       </div>
 
-      <div>
-        <strong>৳4.60</strong>
-        <span>Per Ad</span>
-      </div>
     </section>
 
-  </main>
+  </div>
 
+
+  <!-- BOTTOM NAV -->
   <nav class="bottom-nav">
+
     <a href="index.html" class="active">
-      🏠
-      <span>Home</span>
+      <span class="nav-icon">⌂</span>
+      <small>Home</small>
     </a>
 
     <a href="tasks.html">
-      🎯
-      <span>Tasks</span>
+      <span class="nav-icon">☑</span>
+      <small>Tasks</small>
     </a>
 
-    <a href="#">
-      💰
-      <span>Wallet</span>
+    <a href="refer.html">
+      <span class="nav-icon">👥</span>
+      <small>Refer</small>
     </a>
 
-    <a href="#">
-      👤
-      <span>Profile</span>
+    <a href="profile.html">
+      <span class="nav-icon">●</span>
+      <small>Profile</small>
     </a>
+
   </nav>
+
 
   <script src="src/app.js"></script>
 
@@ -117,9 +240,74 @@
     if (tg) {
       tg.ready();
       tg.expand();
-
-      console.log("Premi Telegram Mini App চালু হয়েছে 🚀");
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const DAILY_LIMIT = 15;
+      const MONEY_PER_AD = 4.60;
+
+      const balance = Number(
+        localStorage.getItem("premi_balance") || 36.80
+      );
+
+      const coins = Number(
+        localStorage.getItem("premi_coins") || 40
+      );
+
+      const completedAds = Number(
+        localStorage.getItem("premi_completed_ads") || 0
+      );
+
+      const percent = Math.min(
+        Math.round((completedAds / DAILY_LIMIT) * 100),
+        100
+      );
+
+      const balanceEl = document.getElementById("balance");
+      const coinsEl = document.getElementById("coins");
+      const completedEl = document.getElementById("completedAds");
+      const percentEl = document.getElementById("progressPercent");
+      const fillEl = document.getElementById("progressFill");
+      const progressText = document.getElementById("progressText");
+
+      if (balanceEl) balanceEl.textContent = balance.toFixed(2);
+      if (coinsEl) coinsEl.textContent = coins;
+      if (completedEl) completedEl.textContent = completedAds;
+
+      document.getElementById("todayIncome").textContent =
+        "৳ " + (completedAds * MONEY_PER_AD).toFixed(2);
+
+      document.getElementById("totalAds").textContent =
+        completedAds;
+
+      document.getElementById("statBalance").textContent =
+        "৳" + balance.toFixed(2);
+
+      document.getElementById("statCoins").textContent =
+        coins;
+
+      if (percentEl) {
+        percentEl.textContent = percent + "%";
+      }
+
+      if (fillEl) {
+        fillEl.style.width = percent + "%";
+      }
+
+      if (progressText) {
+        if (completedAds >= DAILY_LIMIT) {
+          progressText.textContent =
+            "আজকের Daily Limit সম্পন্ন হয়েছে 🎉";
+        } else {
+          progressText.textContent =
+            "আরও " +
+            (DAILY_LIMIT - completedAds) +
+            "টি Ads দেখলে আজকের Daily Limit পূর্ণ হবে 🎯";
+        }
+      }
+
+    });
   </script>
 
 </body>
